@@ -1,0 +1,12 @@
+2024-12-08 17:29:04 [main] INFO  com.exemple.LogGenerator - Connexion réussie pour l'utilisateur John Doe
+2024-12-08 17:29:04 [main] ERROR com.exemple.LogGenerator - Erreur : Échec de connexion pour l'utilisateur Jane Doe
+2024-12-08 17:29:04 [main] WARN  com.exemple.LogGenerator - Avertissement : Utilisation élevée des ressources
+2024-12-08 17:29:06 [main] INFO  com.exemple.LogGenerator - Connexion réussie pour l'utilisateur John Doe
+2024-12-08 17:29:06 [main] ERROR com.exemple.LogGenerator - Erreur : Échec de connexion pour l'utilisateur Jane Doe
+2024-12-08 17:29:06 [main] WARN  com.exemple.LogGenerator - Avertissement : Utilisation élevée des ressources
+2024-12-08 17:29:08 [main] INFO  com.exemple.LogGenerator - Connexion réussie pour l'utilisateur John Doe
+2024-12-08 17:29:08 [main] ERROR com.exemple.LogGenerator - Erreur : Échec de connexion pour l'utilisateur Jane Doe
+2024-12-08 17:29:08 [main] WARN  com.exemple.LogGenerator - Avertissement : Utilisation élevée des ressources
+2024-12-08 17:29:10 [main] INFO  com.exemple.LogGenerator - Connexion réussie pour l'utilisateur John Doe
+2024-12-08 17:29:10 [main] ERROR com.exemple.LogGenerator - Erreur : Échec de connexion pour l'utilisateur Jane Doe
+2024-12-08 17:29:10 [main] WARN  com.exemple.LogGenerator - Avertissement : Utilisation élevée des ressources
