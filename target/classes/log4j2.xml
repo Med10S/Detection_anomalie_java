@@ -1,27 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration>
+<Configuration status="INFO">
     <Properties>
+        <!-- Définir le chemin de base pour les fichiers logs -->
         <Property name="basePath">C:/Users/pc/personnel/etude_GTR2/java/project/Detection_anomalie_java/docker</Property>
     </Properties>
+
     <Appenders>
-        <!-- Enregistrement des logs dans un fichier -->
-        <RollingFile name="LogFile" fileName="${basePath}/java_logs.log" filePattern="${basePath}/java_logs-%d{yyyy-MM-dd}.log">
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %level %logger{36} - %msg%n"/>
+        <!-- Appender pour les fichiers logs avec rotation -->
+        <RollingFile name="LogFile"
+                     fileName="${basePath}/java_logs.log"
+                     filePattern="${basePath}/java_logs-%d{yyyy-MM-dd}.log">
+
+            <!-- Pattern des logs incluant l'ID utilisateur -->
+            <PatternLayout pattern="%X{timestamp} [%t] %level %X{userID} %msg%n" />
+
+            <!-- Politiques de rotation des fichiers -->
             <Policies>
                 <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
                 <SizeBasedTriggeringPolicy size="10MB"/>
             </Policies>
             <DefaultRolloverStrategy max="10">
-                <Delete basePath="${basePath}" maxDepth="10">
+                <Delete basePath="${basePath}" maxDepth="2">
                     <IfLastModified age="30d"/>
                 </Delete>
             </DefaultRolloverStrategy>
         </RollingFile>
+
+        <!-- Appender pour la console -->
         <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %level %logger{36} - %msg%n"/>
+            <PatternLayout>
+                <Pattern>%X{timestamp} [%t] %level %msg%n</Pattern>
+            </PatternLayout>
         </Console>
     </Appenders>
+
     <Loggers>
+        <!-- Logger racine -->
         <Root level="info">
             <AppenderRef ref="LogFile"/>
             <AppenderRef ref="Console"/>
