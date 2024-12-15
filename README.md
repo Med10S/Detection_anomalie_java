@@ -95,7 +95,7 @@ public class LogGenerator {
     }
 }
 ```
-{:file='LogGenerator.java'}
+
 Le programme génère 515 logs au total, avec des informations dynamiques sur les utilisateurs et les timestamps. Ces logs simulent des connexions réussies d'utilisateurs, réparties entre les périodes avant et après 16h, et sont enregistrées avec Log4j. Les timestamps et les IDs des utilisateurs sont générés de manière aléatoire.
 
 
@@ -147,7 +147,6 @@ Voici la configuration détaillée de Log4j2 utilisée pour ce projet :
     </Loggers>
 </Configuration>
 ```
-{:file='log4j2.xml'}
 
 #### Explication de la configuration
 
@@ -247,7 +246,6 @@ Ce fichier de configuration Log4j2 permet de configurer efficacement la gestion 
 2024-12-09 12:19:21.987 [main] INFO 4985 Connexion_réussie
 2024-12-09 15:55:25.038 [main] INFO 3643 Connexion_réussie
 ```
-{: file='java_logs.log'}
 
 
 Chaque ligne de log contient une date et une heure, un niveau de log (INFO), l'identifiant d'un utilisateur et un message décrivant l'événement. Le but est de détecter les utilisateurs qui se connectent après 16h00, ce qui constitue un comportement atypique.
@@ -310,7 +308,6 @@ output {
     }
 }
 ```
-{:file='logstash.conf'}
 
 Dans ce fichier :
 - **input** : Logstash est configuré pour lire les fichiers de log générés par l'application Java. Le chemin d'accès au fichier est spécifié dans `path`.
@@ -371,7 +368,6 @@ networks:
     driver: bridge
 
 ```
-{:file='docker-compose.yml'}
 
 
 Ce fichier compose contient :
@@ -659,8 +655,8 @@ plt.show()
 
 ---
 
-![Desktop View](/images/project_java/output.png){: width="972" height="589" }
-![Desktop View](/images/project_java/output2.png){: width="589" height="972" }
+![Desktop View](/images/project_java/output.png)
+![Desktop View](/images/project_java/output2.png)
 
 
 #### Conclusion
